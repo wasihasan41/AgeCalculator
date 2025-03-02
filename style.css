@@ -1,10 +1,20 @@
+@font-face {
+  font-family: 'font';
+  src: url('assets/fonts/Poppins-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'font2';
+  src: url('assets/fonts/Poppins-BoldItalic.ttf');
+}
+
 body {
-  background-color: whitesmoke;
+  background-color: hsl(0, 0%, 94%);
 }
 
 .body {
   height: 60vh;
-  background-color: white;
+  background-color: hsl(0, 0%, 100%);
   margin: 20vh 10vw 20vh 10vw;
   border-radius: 2vw 2vh 10vw 2vh;
 }
@@ -15,11 +25,18 @@ body {
   padding: 5vh 20vw 0 5vw;
 }
 
+.day-input::placeholder, 
+.month-input::placeholder, 
+.year-input::placeholder{
+  font-weight: 800;
+  color: rgb(158, 157, 157);
+}
+
 
 .head{
   text-transform: uppercase;
-  color: rgb(158, 157, 157);
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: rgb(128, 126, 126);
+  font-family:  font;
   letter-spacing: 0.3vw;
   font-size: small;
   font-weight: 600;
@@ -32,6 +49,8 @@ input {
   width: 10vw;
   height: 4vh;
   border-radius: 1vh;
+  padding-left: 2vw;
+  font-weight: 900;
 }
 
 .break-btn {
@@ -49,7 +68,7 @@ input {
   width: 8vw;
   padding: 2px;
   border: none;
-  background-color: white;
+  background-color: hsl(0, 0%, 100%);
 }
 
 img {
@@ -63,11 +82,64 @@ img {
 }
 
 .dashOne {
-  color: red;
+  color: hsl(204, 83%, 54%);
+  font-family: font2;
+  font-size: 6vw;
+  padding-right: 2vw;
+  margin:  auto 0px auto 0px;
 }
 
-.year {}
+.dashTwo {
+  color: hsl(204, 83%, 54%);
+  font-family: font2;
+  font-size: 6vw;
+  padding-right: 2vw;
+  margin:  auto 0px auto 0px;
+}
 
-.month {}
+.dashThree {
+  color: hsl(204, 83%, 54%);
+  font-family: font2;
+  font-size: 6vw;
+  padding-right: 2vw;
+  margin:  auto 0px auto 0px;
+}
 
-.day {}
+.yearText {
+  color: hsl(0, 0%, 8%);
+  font-family: font2;
+  font-size: 7vh;
+  margin: auto 0px auto 0px
+}
+
+.monthText {
+  color: hsl(0, 0%, 8%);
+  font-family: font2;
+  font-size: 7vh;
+  margin: auto 0px auto 0px
+}
+
+.dayText {
+  color: hsl(0, 0%, 8%);
+  font-family: font2;
+  font-size: 7vh;
+  margin: auto 0px auto 0px
+}
+
+.output{
+  display: flex;
+  padding-left: 5vw;
+  flex-direction: column;
+}
+
+.yearDiv{
+  display: flex;
+}
+
+.monthDiv{
+  display: flex;
+}
+
+.dayDiv{
+  display: flex;
+}

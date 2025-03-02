@@ -10,17 +10,20 @@ window.onload=()=>{
   output.classList.add('output')
 
   const yearDiv = document.createElement('div')
+  yearDiv.classList.add('yearDiv')
   output.appendChild(yearDiv)
   const monthDiv = document.createElement('div')
+  monthDiv.classList.add('monthDiv')
   output.appendChild(monthDiv)
   const dayDiv = document.createElement('div')
+  dayDiv.classList.add('dayDiv')
   output.appendChild(dayDiv)
 
   const dashOne = document.createElement('p')
   dashOne.classList.add('dashOne')
   dashOne.innerHTML = '--'
   const year = document.createElement('p')
-  year.classList.add('year')
+  year.classList.add('yearText')
   year.innerHTML = 'years'
   yearDiv.append(dashOne, year)
 
@@ -28,17 +31,17 @@ window.onload=()=>{
   dashTwo.classList.add('dashTwo')
   dashTwo.innerHTML = '--'
   const month = document.createElement('p')
-  month.classList.add('month')
-  month.innerHTML = 'month'
-  yearDiv.append(dashTwo, month)
+  month.classList.add('monthText')
+  month.innerHTML = 'months'
+  monthDiv.append(dashTwo, month)
 
   const dashThree = document.createElement('p')
   dashThree.classList.add('dashThree')
   dashThree.innerHTML = '--'
   const day = document.createElement('p')
-  day.classList.add('day')
-  day.innerHTML = 'day'
-  yearDiv.append(dashThree, day)
+  day.classList.add('dayText')
+  day.innerHTML = 'days'
+  dayDiv.append(dashThree, day)
 
   return outputDisplay(dashOne, dashTwo, dashThree)
 }
@@ -67,7 +70,13 @@ function ageCalc(dateOfBirth) {
   return outputDisplay(years, months, days) 
 }
 
-const outputDisplay = (dashOne, dashTwo, dashThree, years, months, days)=> {  
-  //code
-  
+const outputDisplay = (years, months, days)=> {  
+  let dashOne = document.querySelector('.dashOne')
+  let dashTwo = document.querySelector('.dashTwo')
+  let dashThree = document.querySelector('.dashThree')
+  if(monthInput.value || yearInput.value || dayInput.value){
+    dashOne.innerHTML = years
+    dashTwo.innerHTML = months
+    dashThree.innerHTML = days
+  } 
 }
