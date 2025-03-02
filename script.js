@@ -3,36 +3,71 @@ const output = document.querySelector('.output')
 let dayInput = document.querySelector('.day-input');
 let monthInput = document.querySelector('.month-input');
 let yearInput = document.querySelector('.year-input') 
+button.addEventListener('click', getValue)
 
-button.addEventListener('click', getDay)
+window.onload=()=>{
+
+  output.classList.add('output')
+
+  const yearDiv = document.createElement('div')
+  output.appendChild(yearDiv)
+  const monthDiv = document.createElement('div')
+  output.appendChild(monthDiv)
+  const dayDiv = document.createElement('div')
+  output.appendChild(dayDiv)
+
+  const dashOne = document.createElement('p')
+  dashOne.classList.add('dashOne')
+  dashOne.innerHTML = '--'
+  const year = document.createElement('p')
+  year.classList.add('year')
+  year.innerHTML = 'years'
+  yearDiv.append(dashOne, year)
+
+  const dashTwo = document.createElement('p')
+  dashTwo.classList.add('dashTwo')
+  dashTwo.innerHTML = '--'
+  const month = document.createElement('p')
+  month.classList.add('month')
+  month.innerHTML = 'month'
+  yearDiv.append(dashTwo, month)
+
+  const dashThree = document.createElement('p')
+  dashThree.classList.add('dashThree')
+  dashThree.innerHTML = '--'
+  const day = document.createElement('p')
+  day.classList.add('day')
+  day.innerHTML = 'day'
+  yearDiv.append(dashThree, day)
+
+  return outputDisplay(dashOne, dashTwo, dashThree)
+}
 
 
-function getDay(){
+function getValue(){
+
   let dateOfBirth = dayjs().set('date', dayInput.value ).set('month', monthInput.value-1).set('year', yearInput.value)
-  if(dayInput.value || monthInput.value || yearInput.value == ''){
-    output.innerHTML = 'Enter full age'
-  }
-  if(dayInput.value || monthInput.value || yearInput.value == true){
-    output.innerHTML = 'and all set'
-  }
-  ageCalc(dateOfBirth)
+
+  return ageCalc(dateOfBirth)
 }
 
 function ageCalc(dateOfBirth) {
+
   const currentDate = dayjs();
   const birthDate = dayjs(dateOfBirth);
 
   let years = currentDate.diff(birthDate, 'year');
-  console.log(years + ' years');
-
   let birthYear = birthDate.add(years, 'year');
 
   const months = currentDate.diff(birthYear, 'months');
-  console.log(months + ' months');
-
   const birthMonth = birthYear.add(months, 'month');
-
+  
   let days = currentDate.diff(birthMonth, 'days');
-  console.log(days + ' days');
+
+  return outputDisplay(years, months, days) 
 }
- ageCalc()
+
+const outputDisplay = (dashOne, dashTwo, dashThree, years, months, days)=> {  
+  //code
+  
+}
